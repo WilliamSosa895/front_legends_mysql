@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 8080;
 app.use(express.static(path.join(__dirname, '.')));
 
 // Siempre responde index.html para rutas desconocidas (SPA)
-app.get('*', (req, res) => {
+app.get('/:splat(*)', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
